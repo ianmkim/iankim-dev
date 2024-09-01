@@ -1,0 +1,4 @@
+bazel-bin
+bazel-iankim-dev
+bazel-out
+bazel-testlogs
