@@ -1,0 +1,63 @@
+{% extends "template.jinja" %} {% block head %}
+<style>
+    p.list {
+        margin: 0.5em;
+        padding: 0px;
+    }
+
+    p {
+        margin: 0.1em;
+        padding: 0px;
+    }
+</style>
+{% endblock %} {% block body %}
+<p>> cat career_graph.dot</p>
+<div>
+    <pre>
+    ┌─────────┐     ┌──────────────┐
+    │Dartmouth├────►│Ghost Robotics│
+    └─────────┘     └──────┬───────┘
+                           │ 2022
+                    ┌──────▼───────┐
+                    │ Daelus Space │
+                    └──────┬───────┘
+                           │ 2023
+                    ┌──────▼───────┐
+                    │  Neuralink   │
+                    └──────────────┘
+</pre
+    >
+</div>
+<p>Writings <a href="/writings">here</a></p>
+<p>Resume <a href="/assets/ikim_final_resume.pdf">here</a></p>
+
+<hr />
+
+<div class="list">
+    <p>> ls career/</p>
+    </br>
+    <p class="list"><strong>Robotics Engineer</strong> @ Neuralink</p>
+    <p class="list"><strong>CS & Philosophy</strong> &nbsp @ Dartmouth</p>
+    <p class="list">Robotics Intern &nbsp @ Neuralink</p>
+    <p class="list">Autonomy Intern &nbsp @ Ghost Robotics</p>
+    </br>
+    <p class="list">Co-founder &nbsp&nbsp&nbsp&nbsp &nbsp @ Daelus Space Inc</p>
+    <p class="list">Robotics Software @ Invisio-AI</p>
+    <p class="list">Consultant &nbsp&nbsp&nbsp&nbsp &nbsp @ Franca.ai</p>
+    </br>
+
+    <p>> ls socials/</p>
+    </br>
+    <p class="list">
+        ianmkim @ <a href="https://twitter.com/ianmkim">twitter</a>
+    </p>
+    <p class="list">
+        ianmkim @ <a href="https://github.com/ianmkim">github</a>
+    </p>
+    <p class="list">
+        Ian Kim @
+        <a href="https://www.linkedin.com/in/ian-kim-6772ab1a6/">linkedin</a>
+    </p>
+
+    {% endblock %}
+</div>

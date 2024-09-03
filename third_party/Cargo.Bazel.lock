@@ -1,5 +1,5 @@
 {
-  "checksum": "040620373e7c59be56e7d9c9edbee56a318b1a6d1f28dca26ea95fe2221983a8",
+  "checksum": "eb9e2d60d2510960f862aacbfdd13b4eb17f4fe8893afaa010f1eadc698ea08a",
   "crates": {
     "addr2line 0.22.0": {
       "name": "addr2line",
@@ -1597,6 +1597,22 @@
               "target": "clap"
             },
             {
+              "id": "markdown 1.0.0-alpha.20",
+              "target": "markdown"
+            },
+            {
+              "id": "minijinja 2.2.0",
+              "target": "minijinja"
+            },
+            {
+              "id": "serde 1.0.209",
+              "target": "serde"
+            },
+            {
+              "id": "struct_iterable 0.1.1",
+              "target": "struct_iterable"
+            },
+            {
               "id": "tokio 1.40.0",
               "target": "tokio"
             },
@@ -1615,6 +1631,10 @@
             {
               "id": "tracing-subscriber 0.3.18",
               "target": "tracing_subscriber"
+            },
+            {
+              "id": "walkdir 2.5.0",
+              "target": "walkdir"
             }
           ],
           "selects": {}
@@ -1659,6 +1679,61 @@
         "version": "1.0.1"
       },
       "license": "Apache-2.0 OR MIT",
+      "license_ids": [
+        "Apache-2.0",
+        "MIT"
+      ],
+      "license_file": "LICENSE-APACHE"
+    },
+    "erased-serde 0.3.31": {
+      "name": "erased-serde",
+      "version": "0.3.31",
+      "package_url": "https://github.com/dtolnay/erased-serde",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/erased-serde/0.3.31/download",
+          "sha256": "6c138974f9d5e7fe373eb04df7cae98833802ae4b11c24ac7039a21d5af4b26c"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "erased_serde",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "erased_serde",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
+        "deps": {
+          "common": [
+            {
+              "id": "serde 1.0.209",
+              "target": "serde"
+            }
+          ],
+          "selects": {}
+        },
+        "edition": "2021",
+        "version": "0.3.31"
+      },
+      "license": "MIT OR Apache-2.0",
       "license_ids": [
         "Apache-2.0",
         "MIT"
@@ -3127,6 +3202,59 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
+    "markdown 1.0.0-alpha.20": {
+      "name": "markdown",
+      "version": "1.0.0-alpha.20",
+      "package_url": "https://github.com/wooorm/markdown-rs",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/markdown/1.0.0-alpha.20/download",
+          "sha256": "911a8325e6fb87b89890cd4529a2ab34c2669c026279e61c26b7140a3d821ccb"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "markdown",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "markdown",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
+        "deps": {
+          "common": [
+            {
+              "id": "unicode-id 0.3.4",
+              "target": "unicode_id"
+            }
+          ],
+          "selects": {}
+        },
+        "edition": "2018",
+        "version": "1.0.0-alpha.20"
+      },
+      "license": "MIT",
+      "license_ids": [
+        "MIT"
+      ],
+      "license_file": "license"
+    },
     "matchers 0.1.0": {
       "name": "matchers",
       "version": "0.1.0",
@@ -3266,6 +3394,44 @@
       ],
       "license_file": "LICENSE-MIT"
     },
+    "memo-map 0.3.3": {
+      "name": "memo-map",
+      "version": "0.3.3",
+      "package_url": "https://github.com/mitsuhiko/memo-map",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/memo-map/0.3.3/download",
+          "sha256": "38d1115007560874e373613744c6fba374c17688327a71c1476d1a5954cc857b"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "memo_map",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "memo_map",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "edition": "2018",
+        "version": "0.3.3"
+      },
+      "license": "Apache-2.0",
+      "license_ids": [
+        "Apache-2.0"
+      ],
+      "license_file": "LICENSE"
+    },
     "mime 0.3.17": {
       "name": "mime",
       "version": "0.3.17",
@@ -3383,6 +3549,78 @@
       "license": "MIT",
       "license_ids": [
         "MIT"
+      ],
+      "license_file": "LICENSE"
+    },
+    "minijinja 2.2.0": {
+      "name": "minijinja",
+      "version": "2.2.0",
+      "package_url": "https://github.com/mitsuhiko/minijinja",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/minijinja/2.2.0/download",
+          "sha256": "6d7d3e3a3eece1fa4618237ad41e1de855ced47eab705cec1c9a920e1d1c5aad"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "minijinja",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "minijinja",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "crate_features": {
+          "common": [
+            "adjacent_loop_items",
+            "builtins",
+            "debug",
+            "default",
+            "deserialization",
+            "loader",
+            "macros",
+            "memo-map",
+            "multi_template",
+            "self_cell",
+            "serde",
+            "std_collections"
+          ],
+          "selects": {}
+        },
+        "deps": {
+          "common": [
+            {
+              "id": "memo-map 0.3.3",
+              "target": "memo_map"
+            },
+            {
+              "id": "self_cell 1.0.4",
+              "target": "self_cell"
+            },
+            {
+              "id": "serde 1.0.209",
+              "target": "serde"
+            }
+          ],
+          "selects": {}
+        },
+        "edition": "2021",
+        "version": "2.2.0"
+      },
+      "license": "Apache-2.0",
+      "license_ids": [
+        "Apache-2.0"
       ],
       "license_file": "LICENSE"
     },
@@ -4762,6 +5000,56 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
+    "same-file 1.0.6": {
+      "name": "same-file",
+      "version": "1.0.6",
+      "package_url": "https://github.com/BurntSushi/same-file",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/same-file/1.0.6/download",
+          "sha256": "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "same_file",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "same_file",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "deps": {
+          "common": [],
+          "selects": {
+            "cfg(windows)": [
+              {
+                "id": "winapi-util 0.1.9",
+                "target": "winapi_util"
+              }
+            ]
+          }
+        },
+        "edition": "2018",
+        "version": "1.0.6"
+      },
+      "license": "Unlicense/MIT",
+      "license_ids": [
+        "MIT",
+        "Unlicense"
+      ],
+      "license_file": "LICENSE-MIT"
+    },
     "scopeguard 1.2.0": {
       "name": "scopeguard",
       "version": "1.2.0",
@@ -4800,6 +5088,44 @@
         "MIT"
       ],
       "license_file": "LICENSE-APACHE"
+    },
+    "self_cell 1.0.4": {
+      "name": "self_cell",
+      "version": "1.0.4",
+      "package_url": "https://github.com/Voultapher/self_cell",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/self_cell/1.0.4/download",
+          "sha256": "d369a96f978623eb3dc28807c4852d6cc617fed53da5d3c400feff1ef34a714a"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "self_cell",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "self_cell",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "edition": "2018",
+        "version": "1.0.4"
+      },
+      "license": "Apache-2.0",
+      "license_ids": [
+        "Apache-2.0"
+      ],
+      "license_file": "LICENSE"
     },
     "serde 1.0.209": {
       "name": "serde",
@@ -4845,6 +5171,8 @@
         "crate_features": {
           "common": [
             "default",
+            "derive",
+            "serde_derive",
             "std"
           ],
           "selects": {}
@@ -4860,15 +5188,13 @@
         },
         "edition": "2018",
         "proc_macro_deps": {
-          "common": [],
-          "selects": {
-            "cfg(any())": [
-              {
-                "id": "serde_derive 1.0.209",
-                "target": "serde_derive"
-              }
-            ]
-          }
+          "common": [
+            {
+              "id": "serde_derive 1.0.209",
+              "target": "serde_derive"
+            }
+          ],
+          "selects": {}
         },
         "version": "1.0.209"
       },
@@ -4913,6 +5239,12 @@
         "compile_data_glob": [
           "**"
         ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -5500,6 +5832,163 @@
         "MIT"
       ],
       "license_file": "LICENSE"
+    },
+    "struct_iterable 0.1.1": {
+      "name": "struct_iterable",
+      "version": "0.1.1",
+      "package_url": "https://github.com/decomoraes/rust_struct_iterable",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/struct_iterable/0.1.1/download",
+          "sha256": "849a064c6470a650b72e41fa6c057879b68f804d113af92900f27574828e7712"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "struct_iterable",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "struct_iterable",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "deps": {
+          "common": [
+            {
+              "id": "struct_iterable_internal 0.1.1",
+              "target": "struct_iterable_internal"
+            }
+          ],
+          "selects": {}
+        },
+        "edition": "2021",
+        "proc_macro_deps": {
+          "common": [
+            {
+              "id": "struct_iterable_derive 0.1.0",
+              "target": "struct_iterable_derive"
+            }
+          ],
+          "selects": {}
+        },
+        "version": "0.1.1"
+      },
+      "license": "MIT",
+      "license_ids": [
+        "MIT"
+      ],
+      "license_file": null
+    },
+    "struct_iterable_derive 0.1.0": {
+      "name": "struct_iterable_derive",
+      "version": "0.1.0",
+      "package_url": null,
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/struct_iterable_derive/0.1.0/download",
+          "sha256": "8bb939ce88a43ea4e9d012f2f6b4cc789deb2db9d47bad697952a85d6978662c"
+        }
+      },
+      "targets": [
+        {
+          "ProcMacro": {
+            "crate_name": "struct_iterable_derive",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "struct_iterable_derive",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "deps": {
+          "common": [
+            {
+              "id": "erased-serde 0.3.31",
+              "target": "erased_serde"
+            },
+            {
+              "id": "proc-macro2 1.0.86",
+              "target": "proc_macro2"
+            },
+            {
+              "id": "quote 1.0.37",
+              "target": "quote"
+            },
+            {
+              "id": "struct_iterable_internal 0.1.1",
+              "target": "struct_iterable_internal"
+            },
+            {
+              "id": "syn 2.0.77",
+              "target": "syn"
+            }
+          ],
+          "selects": {}
+        },
+        "edition": "2021",
+        "version": "0.1.0"
+      },
+      "license": "MIT",
+      "license_ids": [
+        "MIT"
+      ],
+      "license_file": null
+    },
+    "struct_iterable_internal 0.1.1": {
+      "name": "struct_iterable_internal",
+      "version": "0.1.1",
+      "package_url": null,
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/struct_iterable_internal/0.1.1/download",
+          "sha256": "e9426b2a0c03e6cc2ea8dbc0168dbbf943f88755e409fb91bcb8f6a268305f4a"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "struct_iterable_internal",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "struct_iterable_internal",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "edition": "2021",
+        "version": "0.1.1"
+      },
+      "license": "MIT",
+      "license_ids": [
+        "MIT"
+      ],
+      "license_file": null
     },
     "syn 2.0.77": {
       "name": "syn",
@@ -7171,6 +7660,52 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
+    "unicode-id 0.3.4": {
+      "name": "unicode-id",
+      "version": "0.3.4",
+      "package_url": "https://github.com/Boshen/unicode-id",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/unicode-id/0.3.4/download",
+          "sha256": "b1b6def86329695390197b82c1e244a54a131ceb66c996f2088a3876e2ae083f"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "unicode_id",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "unicode_id",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "no_std"
+          ],
+          "selects": {}
+        },
+        "edition": "2015",
+        "version": "0.3.4"
+      },
+      "license": "MIT OR Apache-2.0",
+      "license_ids": [
+        "Apache-2.0",
+        "MIT"
+      ],
+      "license_file": "LICENSE-APACHE"
+    },
     "unicode-ident 1.0.12": {
       "name": "unicode-ident",
       "version": "1.0.12",
@@ -7358,6 +7893,61 @@
         "MIT"
       ],
       "license_file": "LICENSE-APACHE"
+    },
+    "walkdir 2.5.0": {
+      "name": "walkdir",
+      "version": "2.5.0",
+      "package_url": "https://github.com/BurntSushi/walkdir",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/walkdir/2.5.0/download",
+          "sha256": "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "walkdir",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "walkdir",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "deps": {
+          "common": [
+            {
+              "id": "same-file 1.0.6",
+              "target": "same_file"
+            }
+          ],
+          "selects": {
+            "cfg(windows)": [
+              {
+                "id": "winapi-util 0.1.9",
+                "target": "winapi_util"
+              }
+            ]
+          }
+        },
+        "edition": "2018",
+        "version": "2.5.0"
+      },
+      "license": "Unlicense/MIT",
+      "license_ids": [
+        "MIT",
+        "Unlicense"
+      ],
+      "license_file": "LICENSE-MIT"
     },
     "wasi 0.11.0+wasi-snapshot-preview1": {
       "name": "wasi",
@@ -7558,6 +8148,56 @@
       ],
       "license_file": null
     },
+    "winapi-util 0.1.9": {
+      "name": "winapi-util",
+      "version": "0.1.9",
+      "package_url": "https://github.com/BurntSushi/winapi-util",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/winapi-util/0.1.9/download",
+          "sha256": "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "winapi_util",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": true,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "winapi_util",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "deps": {
+          "common": [],
+          "selects": {
+            "cfg(windows)": [
+              {
+                "id": "windows-sys 0.52.0",
+                "target": "windows_sys"
+              }
+            ]
+          }
+        },
+        "edition": "2021",
+        "version": "0.1.9"
+      },
+      "license": "Unlicense OR MIT",
+      "license_ids": [
+        "MIT",
+        "Unlicense"
+      ],
+      "license_file": "LICENSE-MIT"
+    },
     "winapi-x86_64-pc-windows-gnu 0.4.0": {
       "name": "winapi-x86_64-pc-windows-gnu",
       "version": "0.4.0",
@@ -7671,6 +8311,7 @@
             "Win32_System_Console",
             "Win32_System_IO",
             "Win32_System_Pipes",
+            "Win32_System_SystemInformation",
             "Win32_System_SystemServices",
             "Win32_System_Threading",
             "Win32_System_WindowsProgramming",
@@ -8369,7 +9010,6 @@
       "x86_64-unknown-linux-gnu",
       "x86_64-unknown-nixos-gnu"
     ],
-    "cfg(any())": [],
     "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))": [
       "aarch64-apple-darwin",
       "aarch64-apple-ios",
@@ -8521,11 +9161,16 @@
     "axum 0.7.5",
     "axum-extra 0.9.3",
     "clap 4.5.16",
+    "markdown 1.0.0-alpha.20",
+    "minijinja 2.2.0",
+    "serde 1.0.209",
+    "struct_iterable 0.1.1",
     "tokio 1.40.0",
     "tower 0.5.0",
     "tower-http 0.5.2",
     "tracing 0.1.40",
-    "tracing-subscriber 0.3.18"
+    "tracing-subscriber 0.3.18",
+    "walkdir 2.5.0"
   ],
   "direct_dev_deps": []
 }

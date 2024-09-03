@@ -58,11 +58,25 @@ crates_repository(
         "clap": crate.spec(
           version = "4.5.16",
           features = ["derive"],
-        )
+        ),
+        "minijinja": crate.spec(
+            version = "2.2.0",
+            features = ["loader"],
+        ),
+        "struct_iterable": crate.spec(
+            version = "0.1.1",
+        ),
+        "walkdir": crate.spec(
+            version = "2.5.0",
+        ),
+        "serde": crate.spec(
+            version = "1.0.209",
+            features = ["derive"],
+        ),
+        "markdown": crate.spec(
+            version = "1.0.0-alpha.20",
+        ),
     },
-    # Setting the default package name to `""` forces the use of the macros defined in this repository
-    # to always use the root package when looking for dependencies or aliases. This should be considered
-    # optional as the repository also exposes alises for easy access to all dependencies.
     render_config = render_config(
         default_package_name = ""
     ),
@@ -71,3 +85,44 @@ crates_repository(
 load("@crate_index//:defs.bzl", "crate_repositories")
 
 crate_repositories()
+
+http_archive(
+    name = "rules_pkg",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_pkg/releases/download/0.9.1/rules_pkg-0.9.1.tar.gz",
+        "https://github.com/bazelbuild/rules_pkg/releases/download/0.9.1/rules_pkg-0.9.1.tar.gz",
+    ],
+    sha256 = "8f9ee2dc10c1ae514ee599a8b42ed99fa262b757058f65ad3c384289ff70c4b8",
+)
+load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
+
+rules_pkg_dependencies()
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "rules_oci",
+    sha256 = "79e7f80df2840d14d7bc79099b5ed4553398cce8cff1f0df97289a07f7fd213c",
+    strip_prefix = "rules_oci-2.0.0-rc0",
+    url = "https://github.com/bazel-contrib/rules_oci/releases/download/v2.0.0-rc0/rules_oci-v2.0.0-rc0.tar.gz",
+)
+
+load("@rules_oci//oci:dependencies.bzl", "rules_oci_dependencies")
+
+rules_oci_dependencies()
+
+load("@rules_oci//oci:repositories.bzl", "oci_register_toolchains")
+
+oci_register_toolchains(name = "oci")
+
+# You can pull your base images using oci_pull like this:
+load("@rules_oci//oci:pull.bzl", "oci_pull")
+
+oci_pull(
+    name = "distroless_base",
+    digest = "sha256:ccaef5ee2f1850270d453fdf700a5392534f8d1a8ca2acda391fbb6a06b81c86",
+    image = "gcr.io/distroless/base",
+    platforms = [
+        "linux/amd64",
+    ],
+)

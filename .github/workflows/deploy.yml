@@ -1,0 +1,38 @@
+name: deploy
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Bazel cache
+        id: bazel-cache
+        uses: actions/cache@v2
+        env:
+          version: 4.2.1
+        with:
+          path: |
+            ~/.cache/bazel
+          key: ${{ runner.os }}-{{ env.version }}-bazel-cache
+
+      - name: Install bazelisk
+        run: |
+          curl -LO "https://github.com/bazelbuild/bazelisk/releases/download/v1.1.0/bazelisk-linux-amd64"
+          mkdir -p "${GITHUB_WORKSPACE}/bin/"
+          mv bazelisk-linux-amd64 "${GITHUB_WORKSPACE}/bin/bazel"
+          chmod +x "${GITHUB_WORKSPACE}/bin/bazel"
+
+      # yes we want this to be separate because we want to catch both build errors and explicit test errors
+      - name: Build all targets
+        run: bazel build //...
+
+      - name: Login to GitHub Container Registry
+        run: echo ${{ secrets.GH_TOKEN}} | docker login ghcr.io -u ianmkim --password-stdin
+
+      - name: Deploy to GHCR
+        run: bazel run //:push
+
+      - name: Trigger deploy on Render
+        run: curl ${{ secrets.RENDER_DEPLOY_HOOK }}
