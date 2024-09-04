@@ -36,7 +36,7 @@ pkg_tar(
 # Step 3: Build image and add built layer to it
 oci_image(
     name = "main_image",
-    base = "@distroless_base",
+    base = "@distroless_cc",
     tars = [":main_layer"],
     entrypoint = ["/main"],
 )

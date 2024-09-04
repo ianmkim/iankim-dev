@@ -119,10 +119,11 @@ oci_register_toolchains(name = "oci")
 load("@rules_oci//oci:pull.bzl", "oci_pull")
 
 oci_pull(
-    name = "distroless_base",
-    digest = "sha256:ccaef5ee2f1850270d453fdf700a5392534f8d1a8ca2acda391fbb6a06b81c86",
-    image = "gcr.io/distroless/base",
+    name = "distroless_cc",
+    digest = "sha256:8af1a446ef4ba426c1629851784bb9d80d4cf470e314c7b19755dfc5087b8b70",
+    image = "gcr.io/distroless/cc",
     platforms = [
         "linux/amd64",
     ],
 )
+
