@@ -119,9 +119,9 @@ oci_register_toolchains(name = "oci")
 load("@rules_oci//oci:pull.bzl", "oci_pull")
 
 oci_pull(
-    name = "distroless_cc",
-    digest = "sha256:8af1a446ef4ba426c1629851784bb9d80d4cf470e314c7b19755dfc5087b8b70",
-    image = "gcr.io/distroless/cc",
+    name = "ubuntu-jammy",
+    digest = "sha256:adbb90115a21969d2fe6fa7f9af4253e16d45f8d4c1e930182610c4731962658",
+    image = "docker.io/library/ubuntu:jammy-20240808",
     platforms = [
         "linux/amd64",
     ],
