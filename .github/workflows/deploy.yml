@@ -5,7 +5,7 @@ on:
     branches:
       - master
 jobs:
-  deploy-imaage:
+  deploy-image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,3 +33,6 @@ jobs:
 
       - name: Deploy to GHCR
         run: bazel run //:push
+
+      - name: Trigger deploy on render
+        run curl ${{secrets.RENDER_DEPLOY_HOOK_URL}}
