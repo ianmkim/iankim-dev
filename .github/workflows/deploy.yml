@@ -35,4 +35,4 @@ jobs:
         run: bazel run //:push
 
       - name: Trigger deploy on render
-        run curl ${{secrets.RENDER_DEPLOY_HOOK_URL}}
+        run: curl ${{secrets.RENDER_DEPLOY_HOOK_URL}}
