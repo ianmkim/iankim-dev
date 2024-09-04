@@ -31,6 +31,11 @@ rust_binary(
 pkg_tar(
     name = "main_layer",
     srcs = [":main"],
+    data = [
+      "assets",
+      "templates",
+      "writings",
+    ]
 )
 
 # Step 3: Build image and add built layer to it
