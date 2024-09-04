@@ -13,8 +13,8 @@ rust_binary(
     "writings",
   ],
   deps = [
-      "//routes",
-      "//app:state",
+    "//routes",
+    "//app:state",
     "@crate_index//:axum",
     "@crate_index//:minijinja",
     "@crate_index//:axum-extra",
@@ -27,15 +27,31 @@ rust_binary(
   ]
 )
 
+filegroup(
+  name = "assets",
+  srcs = glob(["assets/*"]),
+)
+
+filegroup(
+  name = "templates",
+  srcs = glob(["templates/*"])
+)
+
+filegroup(
+  name = "writings",
+  srcs = glob(["writings/*"])
+)
+
 # Step 2: Compress it to layer using pkg_tar
 pkg_tar(
     name = "main_layer",
-    srcs = [":main"],
-    data = [
-      "assets",
-      "templates",
-      "writings",
-    ]
+    srcs = [
+      ":main",
+      ":assets",
+      ":templates",
+      ":writings",
+    ],
+    strip_prefix = ".",
 )
 
 # Step 3: Build image and add built layer to it
