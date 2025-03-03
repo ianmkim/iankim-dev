@@ -33,7 +33,7 @@ jobs:
 
       - name: Deploy to GHCR
         run: |
-          USE_BAZEL_VERSION=8.1.0 bazel run //:push
+          USE_BAZEL_VERSION=7.5.0 bazel run //:push
 
       - name: Trigger deploy on render
         run: curl ${{secrets.RENDER_DEPLOY_HOOK_URL}}
