@@ -120,8 +120,8 @@ load("@rules_oci//oci:pull.bzl", "oci_pull")
 
 oci_pull(
     name = "ubuntu-jammy",
-    digest = "sha256:adbb90115a21969d2fe6fa7f9af4253e16d45f8d4c1e930182610c4731962658",
-    image = "docker.io/library/ubuntu:jammy-20240808",
+    digest = "sha256:3afff29dffbc200d202546dc6c4f614edc3b109691e7ab4aa23d02b42ba86790",
+    image = "docker.io/library/ubuntu:noble-20250127",
     platforms = [
         "linux/amd64",
     ],

@@ -8,6 +8,7 @@
      pkgs.gcc
      pkgs.zsh
      pkgs.zlib
+     pkgs.docker
    ];
  }).env
 
