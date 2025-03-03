@@ -32,7 +32,8 @@ jobs:
         run: echo ${{ secrets.GH_TOKEN}} | docker login ghcr.io -u ianmkim --password-stdin
 
       - name: Deploy to GHCR
-        run: bazel run //:push
+        run: |
+          USE_BAZEL_VERSION=8 bazel run //:push
 
       - name: Trigger deploy on render
         run: curl ${{secrets.RENDER_DEPLOY_HOOK_URL}}
